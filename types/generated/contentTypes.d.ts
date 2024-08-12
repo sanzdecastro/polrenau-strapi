@@ -362,41 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiProyectoProyecto extends Schema.CollectionType {
-  collectionName: 'proyectos';
-  info: {
-    singularName: 'proyecto';
-    pluralName: 'proyectos';
-    displayName: 'Proyecto';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Titulo: Attribute.String;
-    Screenshots: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    Video: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::proyecto.proyecto',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::proyecto.proyecto',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -823,6 +788,196 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiDopDop extends Schema.SingleType {
+  collectionName: 'dops';
+  info: {
+    singularName: 'dop';
+    pluralName: 'dops';
+    displayName: 'DOP';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    proyectos: Attribute.Relation<
+      'api::dop.dop',
+      'oneToMany',
+      'api::proyecto.proyecto'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::dop.dop', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::dop.dop', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGeneralGeneral extends Schema.SingleType {
+  collectionName: 'generals';
+  info: {
+    singularName: 'general';
+    pluralName: 'generals';
+    displayName: 'General';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    proyectos: Attribute.Relation<
+      'api::general.general',
+      'oneToMany',
+      'api::proyecto.proyecto'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::general.general',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::general.general',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPhotographyPhotography extends Schema.SingleType {
+  collectionName: 'photographies';
+  info: {
+    singularName: 'photography';
+    pluralName: 'photographies';
+    displayName: 'Photography';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    proyectos: Attribute.Relation<
+      'api::photography.photography',
+      'oneToMany',
+      'api::proyecto.proyecto'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::photography.photography',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::photography.photography',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProyectoProyecto extends Schema.CollectionType {
+  collectionName: 'proyectos';
+  info: {
+    singularName: 'proyecto';
+    pluralName: 'proyectos';
+    displayName: 'Proyecto';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulo: Attribute.String;
+    Screenshots: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Client: Attribute.String;
+    Preview: Attribute.Component<'preview.preview'> & Attribute.Required;
+    Description: Attribute.Text;
+    slug: Attribute.UID<'api::proyecto.proyecto', 'Titulo'>;
+    View: Attribute.Component<'view.project-view2'>;
+    Year: Attribute.String;
+    Related: Attribute.Relation<
+      'api::proyecto.proyecto',
+      'oneToMany',
+      'api::proyecto.proyecto'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::proyecto.proyecto',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::proyecto.proyecto',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServicioServicio extends Schema.CollectionType {
+  collectionName: 'servicios';
+  info: {
+    singularName: 'servicio';
+    pluralName: 'servicios';
+    displayName: 'Servicio';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulo: Attribute.String;
+    Description: Attribute.Text;
+    Slides: Attribute.Component<'slide.slide', true>;
+    Columns: Attribute.Enumeration<
+      [
+        'col1',
+        'col2',
+        'col3',
+        'col4',
+        'col5',
+        'col6',
+        'col7',
+        'col8',
+        'col9',
+        'col10',
+        'col11',
+        'col12',
+        'col13'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::servicio.servicio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::servicio.servicio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -833,7 +988,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::proyecto.proyecto': ApiProyectoProyecto;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -842,6 +996,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::dop.dop': ApiDopDop;
+      'api::general.general': ApiGeneralGeneral;
+      'api::photography.photography': ApiPhotographyPhotography;
+      'api::proyecto.proyecto': ApiProyectoProyecto;
+      'api::servicio.servicio': ApiServicioServicio;
     }
   }
 }

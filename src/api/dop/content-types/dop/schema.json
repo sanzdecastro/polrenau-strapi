@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "dops",
+  "info": {
+    "singularName": "dop",
+    "pluralName": "dops",
+    "displayName": "DOP"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "proyectos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto"
+    }
+  }
+}

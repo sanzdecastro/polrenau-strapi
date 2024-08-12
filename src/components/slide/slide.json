@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_slide_slides",
+  "info": {
+    "displayName": "Slide"
+  },
+  "options": {},
+  "attributes": {
+    "Media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "DescriptionMedia": {
+      "type": "string"
+    },
+    "proyecto": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proyecto.proyecto"
+    }
+  }
+}

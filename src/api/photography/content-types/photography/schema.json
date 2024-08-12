@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "photographies",
+  "info": {
+    "singularName": "photography",
+    "pluralName": "photographies",
+    "displayName": "Photography"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "proyectos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto"
+    }
+  }
+}

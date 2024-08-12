@@ -4,7 +4,8 @@
   "info": {
     "singularName": "proyecto",
     "pluralName": "proyectos",
-    "displayName": "Proyecto"
+    "displayName": "Proyecto",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,24 +16,45 @@
       "type": "string"
     },
     "Screenshots": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "Video": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "Client": {
+      "type": "string"
+    },
+    "Preview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "preview.preview",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Titulo"
+    },
+    "View": {
+      "displayName": "ProjectView2",
+      "type": "component",
+      "repeatable": false,
+      "component": "view.project-view2"
+    },
+    "Year": {
+      "type": "string"
+    },
+    "Related": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto"
     }
   }
 }

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicios",
+  "info": {
+    "singularName": "servicio",
+    "pluralName": "servicios",
+    "displayName": "Servicio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "slide.slide"
+    },
+    "Columns": {
+      "type": "enumeration",
+      "enum": [
+        "col1",
+        "col2",
+        "col3",
+        "col4",
+        "col5",
+        "col6",
+        "col7",
+        "col8",
+        "col9",
+        "col10",
+        "col11",
+        "col12",
+        "col13"
+      ]
+    }
+  }
+}
