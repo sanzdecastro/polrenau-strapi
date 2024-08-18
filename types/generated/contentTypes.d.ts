@@ -928,6 +928,41 @@ export interface ApiProyectoProyecto extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceService extends Schema.SingleType {
+  collectionName: 'services';
+  info: {
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'Service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    servicios: Attribute.Relation<
+      'api::service.service',
+      'oneToMany',
+      'api::servicio.servicio'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServicioServicio extends Schema.CollectionType {
   collectionName: 'servicios';
   info: {
@@ -958,6 +993,16 @@ export interface ApiServicioServicio extends Schema.CollectionType {
         'col11',
         'col12',
         'col13'
+      ]
+    >;
+    AspectRatio: Attribute.Enumeration<
+      [
+        'aspect-16_9',
+        'aspect-9_16',
+        'aspect-3_4',
+        'aspect-4_5',
+        'aspect-5_4',
+        'aspect-4_3'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1000,6 +1045,7 @@ declare module '@strapi/types' {
       'api::general.general': ApiGeneralGeneral;
       'api::photography.photography': ApiPhotographyPhotography;
       'api::proyecto.proyecto': ApiProyectoProyecto;
+      'api::service.service': ApiServiceService;
       'api::servicio.servicio': ApiServicioServicio;
     }
   }

@@ -40,6 +40,17 @@
         "col12",
         "col13"
       ]
+    },
+    "AspectRatio": {
+      "type": "enumeration",
+      "enum": [
+        "aspect-16_9",
+        "aspect-9_16",
+        "aspect-3_4",
+        "aspect-4_5",
+        "aspect-5_4",
+        "aspect-4_3"
+      ]
     }
   }
 }

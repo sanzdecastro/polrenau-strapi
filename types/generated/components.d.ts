@@ -90,6 +90,7 @@ export interface SlideSlide extends Schema.Component {
   collectionName: 'components_slide_slides';
   info: {
     displayName: 'Slide';
+    description: '';
   };
   attributes: {
     Media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
