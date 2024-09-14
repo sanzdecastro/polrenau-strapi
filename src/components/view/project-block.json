@@ -48,6 +48,9 @@
     },
     "Leyenda": {
       "type": "text"
+    },
+    "autoplay": {
+      "type": "boolean"
     }
   }
 }
