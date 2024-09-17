@@ -140,6 +140,7 @@ export interface ViewProjectBlock extends Schema.Component {
     >;
     Leyenda: Attribute.Text;
     autoplay: Attribute.Boolean;
+    Poster: Attribute.Media<'images'>;
   };
 }
 

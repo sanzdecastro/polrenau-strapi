@@ -51,6 +51,14 @@
     },
     "autoplay": {
       "type": "boolean"
+    },
+    "Poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
