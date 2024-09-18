@@ -1054,6 +1054,38 @@ export interface ApiServicioServicio extends Schema.CollectionType {
   };
 }
 
+export interface ApiSettingSetting extends Schema.SingleType {
+  collectionName: 'settings';
+  info: {
+    singularName: 'setting';
+    pluralName: 'settings';
+    displayName: 'Settings';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Projects: Attribute.String;
+    Services: Attribute.String;
+    About: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::setting.setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::setting.setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1079,6 +1111,7 @@ declare module '@strapi/types' {
       'api::proyecto.proyecto': ApiProyectoProyecto;
       'api::service.service': ApiServiceService;
       'api::servicio.servicio': ApiServicioServicio;
+      'api::setting.setting': ApiSettingSetting;
     }
   }
 }
