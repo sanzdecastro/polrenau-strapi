@@ -55,6 +55,15 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::proyecto.proyecto"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "General",
+        "DOP",
+        "Photography"
+      ],
+      "default": "General"
     }
   }
 }

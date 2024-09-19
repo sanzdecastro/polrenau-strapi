@@ -941,6 +941,8 @@ export interface ApiProyectoProyecto extends Schema.CollectionType {
       'oneToMany',
       'api::proyecto.proyecto'
     >;
+    Category: Attribute.Enumeration<['General', 'DOP', 'Photography']> &
+      Attribute.DefaultTo<'General'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
