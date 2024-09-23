@@ -794,6 +794,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
     singularName: 'about';
     pluralName: 'abouts';
     displayName: 'About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -801,6 +802,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
   attributes: {
     Info: Attribute.Blocks;
     Images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    InfoBlock: Attribute.Component<'info-block.info-block', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -941,8 +943,6 @@ export interface ApiProyectoProyecto extends Schema.CollectionType {
       'oneToMany',
       'api::proyecto.proyecto'
     >;
-    Category: Attribute.Enumeration<['General', 'DOP', 'Photography']> &
-      Attribute.DefaultTo<'General'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

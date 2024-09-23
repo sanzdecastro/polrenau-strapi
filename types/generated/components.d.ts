@@ -1,5 +1,27 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface InfoBlockInfoBlock extends Schema.Component {
+  collectionName: 'components_info_block_info_blocks';
+  info: {
+    displayName: 'InfoBlock';
+  };
+  attributes: {
+    NameBlock: Attribute.String;
+    LineInfoBlock: Attribute.Component<'line-info-block.line-info-block', true>;
+  };
+}
+
+export interface LineInfoBlockLineInfoBlock extends Schema.Component {
+  collectionName: 'components_line_info_block_line_info_blocks';
+  info: {
+    displayName: 'LineInfoBlock';
+  };
+  attributes: {
+    NameLink: Attribute.String;
+    Link: Attribute.String;
+  };
+}
+
 export interface PreviewPreview extends Schema.Component {
   collectionName: 'components_preview_previews';
   info: {
@@ -208,6 +230,8 @@ export interface ViewProjectView2 extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'info-block.info-block': InfoBlockInfoBlock;
+      'line-info-block.line-info-block': LineInfoBlockLineInfoBlock;
       'preview.preview': PreviewPreview;
       'preview.thumbnail-block': PreviewThumbnailBlock;
       'slide.slide': SlideSlide;

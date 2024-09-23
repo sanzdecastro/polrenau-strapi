@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_line_info_block_line_info_blocks",
+  "info": {
+    "displayName": "LineInfoBlock"
+  },
+  "options": {},
+  "attributes": {
+    "NameLink": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

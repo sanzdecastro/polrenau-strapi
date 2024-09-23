@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_info_block_info_blocks",
+  "info": {
+    "displayName": "InfoBlock"
+  },
+  "options": {},
+  "attributes": {
+    "NameBlock": {
+      "type": "string"
+    },
+    "LineInfoBlock": {
+      "displayName": "LineInfoBlock",
+      "type": "component",
+      "repeatable": true,
+      "component": "line-info-block.line-info-block"
+    }
+  }
+}
