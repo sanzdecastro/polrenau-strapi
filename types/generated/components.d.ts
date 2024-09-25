@@ -15,10 +15,21 @@ export interface LineInfoBlockLineInfoBlock extends Schema.Component {
   collectionName: 'components_line_info_block_line_info_blocks';
   info: {
     displayName: 'LineInfoBlock';
+    description: '';
   };
   attributes: {
     NameLink: Attribute.String;
-    Link: Attribute.String;
+  };
+}
+
+export interface MenuMenu extends Schema.Component {
+  collectionName: 'components_menu_menus';
+  info: {
+    displayName: 'Menu';
+  };
+  attributes: {
+    MenuText: Attribute.String;
+    MenuLink: Attribute.String;
   };
 }
 
@@ -99,10 +110,14 @@ export interface PreviewThumbnailBlock extends Schema.Component {
       [
         'aspect-16_9',
         'aspect-9_16',
+        'aspect-4_3',
         'aspect-3_4',
         'aspect-4_5',
         'aspect-5_4',
-        'aspect-4_3'
+        'aspect-1_85',
+        'aspect-2_35',
+        'aspect-2_39',
+        'aspect-2_40'
       ]
     >;
   };
@@ -154,10 +169,14 @@ export interface ViewProjectBlock extends Schema.Component {
       [
         'aspect-16_9',
         'aspect-9_16',
+        'aspect-4_3',
         'aspect-3_4',
         'aspect-4_5',
         'aspect-5_4',
-        'aspect-4_3'
+        'aspect-1_85',
+        'aspect-2_35',
+        'aspect-2_39',
+        'aspect-2_40'
       ]
     >;
     Leyenda: Attribute.Text;
@@ -232,6 +251,7 @@ declare module '@strapi/types' {
     export interface Components {
       'info-block.info-block': InfoBlockInfoBlock;
       'line-info-block.line-info-block': LineInfoBlockLineInfoBlock;
+      'menu.menu': MenuMenu;
       'preview.preview': PreviewPreview;
       'preview.thumbnail-block': PreviewThumbnailBlock;
       'slide.slide': SlideSlide;

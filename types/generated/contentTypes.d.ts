@@ -1062,6 +1062,7 @@ export interface ApiSettingSetting extends Schema.SingleType {
     singularName: 'setting';
     pluralName: 'settings';
     displayName: 'Settings';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1070,6 +1071,7 @@ export interface ApiSettingSetting extends Schema.SingleType {
     Projects: Attribute.String;
     Services: Attribute.String;
     About: Attribute.String;
+    Menu: Attribute.Component<'menu.menu', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

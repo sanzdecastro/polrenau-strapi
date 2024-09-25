@@ -4,7 +4,8 @@
   "info": {
     "singularName": "setting",
     "pluralName": "settings",
-    "displayName": "Settings"
+    "displayName": "Settings",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,12 @@
     },
     "About": {
       "type": "string"
+    },
+    "Menu": {
+      "displayName": "Menu",
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu"
     }
   }
 }

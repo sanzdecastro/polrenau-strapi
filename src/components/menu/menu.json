@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_menu_menus",
+  "info": {
+    "displayName": "Menu"
+  },
+  "options": {},
+  "attributes": {
+    "MenuText": {
+      "type": "string"
+    },
+    "MenuLink": {
+      "type": "string"
+    }
+  }
+}

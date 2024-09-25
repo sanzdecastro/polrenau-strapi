@@ -40,10 +40,14 @@
       "enum": [
         "aspect-16_9",
         "aspect-9_16",
+        "aspect-4_3",
         "aspect-3_4",
         "aspect-4_5",
         "aspect-5_4",
-        "aspect-4_3"
+        "aspect-1_85",
+        "aspect-2_35",
+        "aspect-2_39",
+        "aspect-2_40"
       ]
     },
     "Leyenda": {
