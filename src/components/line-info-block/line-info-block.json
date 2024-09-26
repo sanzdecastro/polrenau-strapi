@@ -9,7 +9,7 @@
     "NameLink": {
       "type": "string"
     },
-    "Url": {
+    "LinkTo": {
       "type": "string"
     }
   }

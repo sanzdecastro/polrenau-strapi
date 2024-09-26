@@ -19,7 +19,7 @@ export interface LineInfoBlockLineInfoBlock extends Schema.Component {
   };
   attributes: {
     NameLink: Attribute.String;
-    Url: Attribute.String;
+    LinkTo: Attribute.String;
   };
 }
 
