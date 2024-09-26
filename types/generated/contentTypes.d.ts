@@ -1072,6 +1072,7 @@ export interface ApiSettingSetting extends Schema.SingleType {
     Services: Attribute.String;
     About: Attribute.String;
     Menu: Attribute.Component<'menu.menu', true>;
+    ContactLine: Attribute.Component<'contact.contact'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

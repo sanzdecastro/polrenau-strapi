@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_contact_contacts",
+  "info": {
+    "displayName": "Contact"
+  },
+  "options": {},
+  "attributes": {
+    "MailText": {
+      "type": "string"
+    },
+    "MailUrl": {
+      "type": "string"
+    },
+    "PhoneText": {
+      "type": "string"
+    },
+    "PhoneUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ContactContact extends Schema.Component {
+  collectionName: 'components_contact_contacts';
+  info: {
+    displayName: 'Contact';
+  };
+  attributes: {
+    MailText: Attribute.String;
+    MailUrl: Attribute.String;
+    PhoneText: Attribute.String;
+    PhoneUrl: Attribute.String;
+  };
+}
+
 export interface InfoBlockInfoBlock extends Schema.Component {
   collectionName: 'components_info_block_info_blocks';
   info: {
@@ -250,6 +263,7 @@ export interface ViewProjectView2 extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'contact.contact': ContactContact;
       'info-block.info-block': InfoBlockInfoBlock;
       'line-info-block.line-info-block': LineInfoBlockLineInfoBlock;
       'menu.menu': MenuMenu;
