@@ -8,6 +8,9 @@
   "attributes": {
     "NameLink": {
       "type": "string"
+    },
+    "Url": {
+      "type": "string"
     }
   }
 }
